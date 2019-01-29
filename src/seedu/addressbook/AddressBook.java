@@ -111,6 +111,17 @@ public class AddressBook {
     private static final String COMMAND_FIND_PARAMETERS = "KEYWORD [MORE_KEYWORDS]";
     private static final String COMMAND_FIND_EXAMPLE = COMMAND_FIND_WORD + " alice bob charlie";
 
+    /**
+     * Added stuff
+     */
+    private static final String COMMAND_FIND_NUM = "findNum";
+    //need to add the below to somewhere
+    private static final String COMMAND_FIND_NUM_DESC = "Finds all persons whose numbers match the input number "
+            + "and displays them as a list with index numbers.";
+    /**
+     * end of added stuff
+     */
+
     private static final String COMMAND_LIST_WORD = "list";
     private static final String COMMAND_LIST_DESC = "Displays all persons as a list with index numbers.";
     private static final String COMMAND_LIST_EXAMPLE = COMMAND_LIST_WORD;
@@ -373,6 +384,14 @@ public class AddressBook {
             return executeAddPerson(commandArgs);
         case COMMAND_FIND_WORD:
             return executeFindPersons(commandArgs);
+        /**
+         * added command_find_num
+         */
+        case COMMAND_FIND_NUM:
+            return executeFindNum(commandArgs);
+        /**
+         * end of addition
+         */
         case COMMAND_LIST_WORD:
             return executeListAllPersonsInAddressBook();
         case COMMAND_DELETE_WORD:
@@ -492,6 +511,42 @@ public class AddressBook {
         }
         return matchedPersons;
     }
+/**
+ * added stuff
+ */
+    /**
+     * Finds and lists all persons in address book whose number matches the input number.
+     *
+     * @param inputNum input string of number from the user
+     * @return feedback display message for the operation result
+     */
+    private static String executeFindNum(String inputNum) {
+        //final Set<String> keywords = extractKeywordsFromFindPersonArgs(commandArgs);
+        final ArrayList<String[]> personsFound = getPersonsWithSameNum(inputNum);
+        showToUser(personsFound);
+        return getMessageForPersonsDisplayedSummary(personsFound);
+    }
+
+    /**
+     * Retrieves all persons in the full model whose names contain some of the specified keywords.
+     *
+     * @param inputNum for searching
+     * @return list of persons in full model with name containing some of the keywords
+     */
+    private static ArrayList<String[]> getPersonsWithSameNum(String inputNum) {
+        final ArrayList<String[]> matchedPersons = new ArrayList<>();
+        for (String[] person : getAllPersonsInAddressBook()) {
+            final String num = getPhoneFromPerson(person); //Here prob returns the p/ also, so may needa remove
+            if (num.equals(inputNum)) {
+                matchedPersons.add(person);
+            }
+        }
+        return matchedPersons;
+    }
+    /**
+     * end of added stuff
+     */
+
 
     /**
      * Deletes person identified using last displayed index.
