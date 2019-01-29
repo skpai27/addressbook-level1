@@ -34,7 +34,7 @@
   list
 
   # order of phone and email should not matter
-  add Charlie Dickson e/charlie.d@nus.edu.sg p/333333
+  add Charlie Dickson e/charlie.d@nus.edu.sg p/222222
   list
   add Dickson Ee e/dickson@nus.edu.sg p/444444
   list
@@ -60,6 +60,23 @@
   find Dickson
   # find multiple with some keywords
   find Charlie Betsy
+
+##########################################################
+# test find number command
+##########################################################
+
+  # should match none with no keywords
+  findNum
+  # should only match full numbers in person numbers
+  findNum 9090
+  # does not match if none have keyword
+  findNum Betsy
+
+  # find unique number
+  findNum 111111
+  # find multiple with same number
+  findNum 222222
+
 
 ##########################################################
 # test delete person command
