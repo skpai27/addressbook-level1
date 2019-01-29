@@ -138,8 +138,8 @@
 || 
 || 2 persons found!
 || ===================================================
-|| Enter command: || [Command entered:  add Charlie Dickson e/charlie.d@nus.edu.sg p/333333]
-|| New person added: Charlie Dickson, Phone: 333333, Email: charlie.d@nus.edu.sg
+|| Enter command: || [Command entered:  add Charlie Dickson e/charlie.d@nus.edu.sg p/222222]
+|| New person added: Charlie Dickson, Phone: 222222, Email: charlie.d@nus.edu.sg
 || ===================================================
 || Enter command: || [Command entered:  list]
 || 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
@@ -205,26 +205,26 @@
 || 2 persons found!
 || ===================================================
 || Enter command: || [Command entered:  findNum]
-||
+|| 
 || 0 persons found!
 || ===================================================
 || Enter command: || [Command entered:  findNum 9090]
-||
+|| 
 || 0 persons found!
 || ===================================================
 || Enter command: || [Command entered:  findNum Betsy]
-||
+|| 
 || 0 persons found!
 || ===================================================
-|| Enter command: || [Command entered:  find 111111]
+|| Enter command: || [Command entered:  findNum 111111]
 || 	1. Adam Brown  Phone Number: 111111  Email: adam@gmail.com
-||
+|| 
 || 1 persons found!
 || ===================================================
-|| Enter command: || [Command entered:  find 222222]
+|| Enter command: || [Command entered:  findNum 222222]
 || 	1. Betsy Choo  Phone Number: 222222  Email: benchoo@nus.edu.sg
 || 	2. Charlie Dickson  Phone Number: 222222  Email: charlie.d@nus.edu.sg
-||
+|| 
 || 2 persons found!
 || ===================================================
 || Enter command: || [Command entered:  delete]
